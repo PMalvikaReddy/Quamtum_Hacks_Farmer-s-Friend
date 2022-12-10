@@ -1,0 +1,179 @@
+<html>
+
+<head>
+    <title>AI crop recommendation</title>
+
+    <style type="text/css">
+        * {
+            font-family: sans-serif;
+        }
+
+        h1 {
+            color: rgb(16, 155, 155)
+        }
+
+        fieldset {
+            border-radius: 2rem;
+            width: 30%;
+            margin: 20px auto;
+            box-shadow: 2px 2px 5px 5px #ebedef;
+            background-color: #dedec2;
+        }
+
+        legend {
+            border: 1px solid #c7cbd1;
+            border-radius: 15px;
+            padding: 5px;
+            background-color: #ffd9cc;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            display: block;
+            border: none;
+            border-bottom: 1px solid black;
+            padding: 5px;
+            margin: 20px;
+            background-color: rgb(240, 236, 236);
+            /*this */
+        }
+
+        label,
+        input[type="radio"],
+        input[type="checkbox"],
+        input[type="file"],
+        select,
+        textarea[name="comments"],
+        input[type="submit"] {
+            margin: 20px;
+        }
+
+        select {
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+
+        /* .submitbtns {
+            background-color: rgb(30, 148, 172);
+            color: white;
+            width: 20%;
+            padding: 5px;
+            border-radius: 15px;
+            border: none;
+        } */
+        .button {
+            background-color: #5885d1;
+            border: none;
+            border-radius:0.5rem ;
+            margin-left: 50px;
+            color: white;
+            padding: 7px 7px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-family: "Times New Roman", Times, serf;
+        }
+
+        input[placeholder] {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <h1>ML CROP RECOMMENDATION SYSTEM</h1>
+    <br>
+    <!-- <form action="table.html" method="get"> -->
+        <form action = "{{ url_for('predict')}}"method = "post">
+            <fieldset>
+                <legend>CROP RECOMMENDATION PARAMETERS</legend>
+                <label For="username">TEMPERATURE</label>
+                <br>
+                <input type="text" name="temp" maxlength="15" placeholder=" in range:(12 -35)" required="required">
+                <br><br>
+
+                <label For="Email">RAINFALL</label>
+                <br>
+                <input type="text" name="rainfall" placeholder="in range(25-225)" required="required">
+                <br><br>
+                <label for="SOIL_TYPE"> SOIL_TYPE </label>
+                <br>
+                <select name="soil">
+                    <option value="select soil type">select soil type</option>
+                    <option value="heavy_clay">heavy_clay</option>
+                    <option value="clay_loam">clay_loam</option>
+                    <option value="sandy_loam">sandy_loam</option>
+                    <option value="well_drained_light_clay">well_drained_light_clay</option>
+                    <option value="well_drained_heavy_clay">well_drained_heavy_clay</option>
+                    <option value="deep_heavy_clay">deep_heavy_clay</option>
+                </select>
+                <!-- <input type = "text" name = "soil" placeholder = "Type the above selected option" required = "required" /> -->
+                <br><br>
+                <label for="STATE"> STATE </label>
+                <br>
+                <select name="states">
+                    <option value="Select state">Select state</option>
+                    <option value="madhya_pradesh">madhya_pradesh</option>
+                    <option value="uttar_pradesh">uttar_pradesh</option>
+                    <option value="gujarat">gujarat</option>
+                    <option value="karnataka">karnataka</option>
+                    <option value="rajasthan">rajasthan</option>
+                    <option value="maharashtra">maharashtra</option>
+                    <option value="punjab">punjab</option>
+                    <option value="tamil_nadu">tamil_nadu</option>
+                    <option value="haryana">haryana</option>
+                    <option value="bihar">bihar</option>
+                    <option value="west_bengal">west_bengal</option>
+                    <option value="jharkhand">jharkhand</option>
+                    <option value="assam">assam</option>
+                    <option value="chattisgarh">chattisgarh</option>
+                    <option value="himachal_pradesh">himachal_pradesh</option>
+                    <option value="telangana">telangana</option>
+                </select>
+                <!-- <input type = "text" name = "state" placeholder = "state" required = "required" /> -->
+                <br><br>
+                <label for="WATERSUPPLY"> WATERSUPPLY</label>
+                <br>
+                <select name="watersupply">
+                    <option value="Select watersupply type">Select watersupply type</option>
+                    <option value="low">low</option>
+                    <option value="medium">medium</option>
+                    <option value="high">high</option>
+                </select>
+                <!-- <input type = "text" name = "water_supply" placeholder = "watersupply" required = "required" /> -->
+                <br><br>
+                <label for="HUMIDITY"> HUMIDITY</label>
+                <br>
+                <select name="humidity">
+                    <option value="Select rainfall type">Select humidity type</option>
+                    <option value="low">low</option>
+                    <option value="medium">medium</option>
+                    <option value="high">high</option>
+                </select>
+                <!-- <input type = "text" name = "humidity" placeholder = "humidity" required = "required" /> -->
+                <br><br>
+                <button class="button">Predict Crop</button>
+                {{prediction_text}}
+            </fieldset>
+            
+
+        </form>
+    <!-- </form> -->
+
+</body>
+
+</html>
