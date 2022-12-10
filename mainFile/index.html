@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Farmer's Friend</title>
+</head>
+
+<body>
+
+    <div class="nav">
+        <ul>
+            <li><a class="active" href="#">About us</a></li>
+            <li><a href="#">Buy Products</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="../chatBot/index.html"
+                onclick="window.open('../chatBot/index.html','newwindow','width=1000 height=1000');
+                return false;"><img class="bot" src="chatbotIcon.png" alt="bot image" width="100px" height="100px"></a></li>
+        </ul>
+    </div>
+    <div class="navbar">
+        <img class="logo" src="logonew.png" alt="logo">
+
+    </div>
+    <div class="container">
+        <div class="ticker">
+            <div class="title">
+                <h5>Breaking News</h5>
+            </div>
+            <div class="news">
+                <marquee>
+                    <p><a
+                            href="https://economictimes.indiatimes.com/jobs/farming-as-a-career-choice-yes-and-right-now-agriculture-needs-youth/articleshow/95558314.cms">
+                            Farming as a career choice? Yes, and right now agriculture Needs youth! </a>
+                    </p>
+                </marquee>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="inputs">
+            <input class="input1" type="text" placeholder="Enter any city..." id="cityinput">
+            <input class="btn1" type="submit" value="Submit" id="add">
+            <button placeholder="submit" id="add"></button>
+        </div>
+        <div class="wrapper">
+
+            <h2 id="cityoutput"></h2>
+            <p id="description"></p>
+            <p id="temp"></p>
+            <p id="wind"></p>
+        </div>
+    </div>
+
+    </div>
+    <div class="cards">
+    <div class="grid">
+        
+        <div class="grid-item1">
+            <div class="card">
+                <img class="card-img" src="agri1.jpg" alt="Modern Technology" />
+                <div class="card-content">
+                    <h1 class="card-header">Modern Agriculural Technology</h1>
+                    <p class="card-text">
+                        Modern farming technology is used to improve the wide types of production practices employed by farmers. Some of the examples are Indoor Vertical Farming, Crop Sensors and Robot farmers.
+                    </p>
+                    <button class="card-btn"><a class="read" href="https://theenterpriseworld.com/modern-agriculture-technology/" >Read More <span>&rarr;</span></a></button>
+                </div>
+            </div>
+    </div>
+        <div class="grid-item2">
+            <div class="card">
+                <img class="card-img" src="agri2.jpg" alt="Agricultural Schemes" />
+                <div class="card-content">
+                    <h1 class="card-header">Government Agricultural Schemes</h1>
+                    <p class="card-text">
+                        The aim is to supplement the financial needs of the farmers in procuring various inputs to ensure proper crop health and appropriate yields, and commensurate with the anticipated farm income.
+                    
+                    </p>
+                    <button class="card-btn"><a class="read" href="https://vikaspedia.in/schemesall/schemes-for-farmers" >Read More <span>&rarr;</span></a></button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item3">
+            <div class="card">
+                <img class="card-img" src="agri3.jpg" alt="hands in ariculture" />
+                <div class="card-content">
+
+                    <h1 class="card-header">Youth In Agriculture</h1>
+                    <p class="card-text">
+                        The involvement of youth in agriculture is vital as they are more receptive to new ideas and advanced technologies. They should be taught about profitable farming techniques so that less land and resources are used.
+                    </p>
+                    <button class="card-btn"><a class="read" href="https://www.heifer.org/blog/what-is-the-role-of-youth-in-agriculture.html" >Read More <span>&rarr;</span></a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+
+    <script src="script.js"></script>
+</body>
+</html>
